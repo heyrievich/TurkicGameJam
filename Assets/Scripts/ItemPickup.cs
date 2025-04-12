@@ -6,6 +6,14 @@ public class ItemPickup : MonoBehaviour
     public GameObject takeObject;
 
     private bool playerInRange = false;
+    public AudioSource source;
+    public AudioClip take;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
 
     void Update()
     {
@@ -14,6 +22,7 @@ public class ItemPickup : MonoBehaviour
             bool added = InventorySystem.Instance.AddItem(itemData);
             if (added)
             {
+                source.PlayOneShot(take);
                 Destroy(takeObject); // удалить топор из мира
             }
         }

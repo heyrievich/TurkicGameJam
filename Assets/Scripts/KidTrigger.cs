@@ -8,12 +8,19 @@ public class KidTrigger : MonoBehaviour
 {
     public GameObject kidObject; // Объект, который будет исчезать
     public string artefactName = "SunArtefact"; // Название нужного артефакта
-
+    public Animator animator;
     private bool playerInside = false;
     public InventorySystem inventory;
+    public GameObject particle;
+    public AudioClip laugh;
+    private AudioSource source;
 
     public ArtefactCounterUI artefactCounterUI;
 
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,43 +59,44 @@ public class KidTrigger : MonoBehaviour
                 // Удаляем артефакт из инвентаря
                 inventory.items[i] = null;
                 inventory.slots[i].ClearSlot();
+                particle.SetActive(true);
 
+                // Устанавливаем анимацию радости
+                if (animator != null)
+                {
+                    animator.SetBool("isHappy", true);
+                }
 
-                // Плавно исчезает объект
+                // Визуальный эффект — быстрое вращение и уменьшение
                 if (kidObject != null)
                 {
-                    // Уменьшаем масштаб
-                    kidObject.transform.DOScale(Vector3.zero, 1.5f).SetEase(Ease.InOutSine);
+                    source.PlayOneShot(laugh);
+                    Sequence sequence = DOTween.Sequence();
 
-                    // Плавно уменьшаем прозрачность всех материалов
-                    Renderer[] renderers = kidObject.GetComponentsInChildren<Renderer>();
-                    foreach (Renderer renderer in renderers)
-                    {
-                        foreach (Material mat in renderer.materials)
-                        {
-                            // Убедись, что используется шейдер с поддержкой прозрачности
-                            Color startColor = mat.color;
-                            mat.DOColor(new Color(startColor.r, startColor.g, startColor.b, 0f), 1.5f);
-                        }
-                    }
+                    // Вращение
+                    sequence.Join(kidObject.transform.DORotate(new Vector3(0, 720, 0), 1.5f, RotateMode.FastBeyond360));
 
-                    // Полное отключение объекта после задержки
-                    DOVirtual.DelayedCall(1.6f, () =>
+                    // Уменьшение
+                    sequence.Join(kidObject.transform.DOScale(Vector3.zero, 1.5f).SetEase(Ease.InBack));
+
+                    // Деактивировать объект после анимации
+                    sequence.AppendCallback(() =>
                     {
+                       
                         kidObject.SetActive(false);
                     });
                 }
 
+                // Обновляем UI
                 if (artefactCounterUI != null)
                     artefactCounterUI.UpdateArtefactCount();
-
-
 
                 KidSunArtefactGive();
                 break;
             }
         }
     }
+
 
     public void KidSunArtefactGive()
     {

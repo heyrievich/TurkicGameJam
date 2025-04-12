@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
+
 public class TakeObjectTrigger : MonoBehaviour
 {
     [Header("Objects to control")]
@@ -11,8 +12,11 @@ public class TakeObjectTrigger : MonoBehaviour
     public float jumpPower = 1f;  // Сила подпрыгивания
     public float jumpDuration = 0.5f; // Длительность прыжка
 
+   
+
     private void Start()
     {
+
         // Подсказка изначально выключена
         if (hint != null)
             hint.SetActive(false);

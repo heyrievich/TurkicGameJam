@@ -13,9 +13,15 @@ public class GrowableTree : MonoBehaviour
     private bool playerInTrigger = false;
     private bool isMoving = false;
     public float delay;
+    private AudioSource source;
+    public AudioClip grohot;
+
+    public PlayerController player;
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
+
         if (log != null)
             initialPosition = log.position;
     }
@@ -30,9 +36,18 @@ public class GrowableTree : MonoBehaviour
 
     void LiftLog()
     {
-        FindObjectOfType<CameraFollow>().ShakeCamera(0.1f);
+        player.TreeUp(); // Запускаем анимацию TreeUp
+       
         isMoving = true;
 
+        StartCoroutine(LiftAfterDelay(1.4f));// Поднимаем бревно через 1.5 секунды
+    }
+
+    IEnumerator LiftAfterDelay(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        source.PlayOneShot(grohot);
+        FindObjectOfType<CameraFollow>().ShakeCamera(0.1f);
         Vector3 direction = isGrowable ? Vector3.up : Vector3.down;
         Vector3 targetPosition = initialPosition + direction * liftHeight;
 
@@ -41,6 +56,7 @@ public class GrowableTree : MonoBehaviour
             StartCoroutine(ReturnLogAfterDelay(delay));
         });
     }
+
 
     IEnumerator ReturnLogAfterDelay(float delay)
     {
