@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SunArtefacr
   m_EditorClassIdentifier: 
   itemName: SunArtefact
-  icon: {fileID: 21300000, guid: ad6f6ee0c1d4c594992a0913259484e3, type: 3}
+  icon: {fileID: 21300000, guid: 92dc16ca211492842992d51137f9dedf, type: 3}
   prefab: {fileID: 790848623437374606, guid: 1e00ef36e19e81c429e2f54f889446f6, type: 3}

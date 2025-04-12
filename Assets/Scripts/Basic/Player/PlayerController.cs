@@ -4,13 +4,13 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
-    public float sprintMultiplier = 1.5f; // Умножение скорости при беге
-    public LayerMask groundLayer; // Слой для клика
+    public float sprintMultiplier = 1.5f;
+    public LayerMask groundLayer;
 
     [Header("Stamina Settings")]
     public float maxStamina = 5f;
-    public float staminaRecoveryRate = 1f; // скорость восстановления в секунду
-    public float staminaDrainRate = 1.5f; // скорость траты в секунду при беге
+    public float staminaRecoveryRate = 1f;
+    public float staminaDrainRate = 1.5f;
 
     private float currentStamina;
     private Rigidbody rb;
@@ -18,9 +18,12 @@ public class PlayerController : MonoBehaviour
     private bool isMoving = false;
     private bool isSprinting = false;
 
+    private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         targetPosition = transform.position;
         currentStamina = maxStamina;
     }
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
         HandleMouseClick();
         HandleSprintInput();
         RegenerateStamina();
+        UpdateAnimation();
     }
 
     void FixedUpdate()
@@ -39,8 +43,6 @@ public class PlayerController : MonoBehaviour
             MoveToTarget();
         }
     }
-
-    /// Обрабатывает клик мыши и устанавливает новую точку назначения
 
     void HandleMouseClick()
     {
@@ -55,10 +57,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// Обрабатывает нажатие Shift для ускорения и учитывает выносливость
     void HandleSprintInput()
     {
-        // Проверка: ПКМ нажата, есть выносливость и игрок в движении
         if (Input.GetMouseButton(1) && currentStamina > 0f && isMoving)
         {
             isSprinting = true;
@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// Восстанавливает выносливость со временем
     void RegenerateStamina()
     {
         if (!isSprinting && currentStamina < maxStamina)
@@ -81,11 +80,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// Двигает персонажа к цели и поворачивает его
     void MoveToTarget()
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
-        direction.y = 0f; // исключаем вертикаль
+        direction.y = 0f;
 
         float speed = moveSpeed * (isSprinting ? sprintMultiplier : 1f);
         Vector3 move = direction * speed * Time.fixedDeltaTime;
@@ -97,14 +95,21 @@ public class PlayerController : MonoBehaviour
             rb.MoveRotation(Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.fixedDeltaTime));
         }
 
-        // Проверка достижения точки
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             isMoving = false;
         }
     }
 
-    /// Геттер для текущего уровня выносливости (например, для UI)
+    void UpdateAnimation()
+    {
+        if (animator == null) return;
+
+        animator.SetBool("isIdle", !isMoving);
+        animator.SetBool("isWalk", isMoving && !isSprinting);
+        animator.SetBool("isRun", isMoving && isSprinting);
+    }
+
     public float GetStamina()
     {
         return currentStamina;

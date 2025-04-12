@@ -2,23 +2,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class ArtefactCounterUI : MonoBehaviour
 {
-    public Image[] artefactIcons; // Тут вставь в инспекторе 3 иконки (серые кружочки)
-    private int currentCount = 0;
+    public Image[] artefactIcons; // Вставь 3 иконки
+    public Sprite inactiveSprite; // Неотданный артефакт (серый)
+    public Sprite activeSprite;   // Отданный артефакт (цветной)
     public string sceneName;
+
+    private int currentCount = 0;
 
     public void UpdateArtefactCount()
     {
         if (currentCount < artefactIcons.Length)
         {
-            artefactIcons[currentCount].color = Color.yellow; // Меняем цвет на жёлтый
+            artefactIcons[currentCount].sprite = activeSprite;
             currentCount++;
         }
-        if(currentCount >= 3)
+
+        if (currentCount >= artefactIcons.Length)
         {
-            SceneManager.LoadScene(sceneName); // Загружаем сцену
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
