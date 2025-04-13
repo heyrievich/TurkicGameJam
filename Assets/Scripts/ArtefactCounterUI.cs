@@ -7,6 +7,7 @@ public class ArtefactCounterUI : MonoBehaviour
     public Image[] artefactIcons; // Вставь 3 иконки
     public Sprite inactiveSprite; // Неотданный артефакт (серый)
     public Sprite activeSprite;   // Отданный артефакт (цветной)
+    public Animator animator;
     public string sceneName;
 
     private int currentCount = 0;
@@ -21,7 +22,12 @@ public class ArtefactCounterUI : MonoBehaviour
 
         if (currentCount >= artefactIcons.Length)
         {
-            SceneManager.LoadScene(sceneName);
+            animator.Play("PeregodDisappear");
+            Invoke("LoadScene", 1.5f);
         }
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
