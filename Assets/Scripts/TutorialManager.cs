@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +8,15 @@ public class TutorialManager : MonoBehaviour
     private int hintCount;
     public GameObject[] hints;
 
+    public PlayerController player;
+
     private float lastHintTime;
-    private int leftClickCount;
+    private int movementKeyCount; // в†ђ Р·Р°РјРµРЅРёР»Рё СЃС‡РµС‚С‡РёРє РЅР°Р¶Р°С‚РёР№ РјС‹С€Рё
+
+    public ItemPickup pickup; // в†ђ РґРѕР±Р°РІРёС‚СЊ РІ РєР»Р°СЃСЃРµ TutorialManager
+
+    public KidTrigger kidTrigger;
+
 
     void Start()
     {
@@ -17,7 +24,12 @@ public class TutorialManager : MonoBehaviour
         {
             hint.SetActive(false);
         }
-        hints[0].SetActive(true);
+
+        if (hints.Length > 0)
+        {
+            hints[0].SetActive(true);
+        }
+
         animator.Play("CloudAppear");
     }
 
@@ -26,10 +38,15 @@ public class TutorialManager : MonoBehaviour
         switch (hintCount)
         {
             case 0:
-                if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
+                // РќР°Р¶Р°С‚РёСЏ РєР»Р°РІРёС€ WASD
+                if (Input.GetKeyDown(KeyCode.W) ||
+                    Input.GetKeyDown(KeyCode.A) ||
+                    Input.GetKeyDown(KeyCode.S) ||
+                    Input.GetKeyDown(KeyCode.D))
                 {
-                    leftClickCount++;
-                    if (leftClickCount >= 3)
+                    movementKeyCount++;
+
+                    if (movementKeyCount >= 3)
                     {
                         AdvanceHint();
                     }
@@ -37,23 +54,38 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 1:
-                if (Input.GetMouseButtonDown(1)) // Правая кнопка мыши
+                // РќР°Р¶Р°С‚РёРµ Shift РІРјРµСЃС‚Рѕ РџРљРњ
+                if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
                 {
                     AdvanceHint();
                 }
                 break;
 
             case 2:
-                if (Input.GetKeyDown(KeyCode.E))
+                // РџСЂРѕРІРµСЂРєР° TreeUp
+                if (player != null && player.isTreeUp)
                 {
                     AdvanceHint();
                 }
                 break;
 
             case 3:
+                if (pickup != null && pickup.playerInTriggerBool && Input.GetKeyDown(KeyCode.E))
+                {
+                    AdvanceHint();
+                }
+                break;
+
             case 4:
+                // РџСЂРѕРІРµСЂРєР° TreeUp
+                if (player != null && player.isTreeUp)
+                {
+                    AdvanceHint();
+                }
+                break;
+
             case 5:
-                if (Input.GetKeyDown(KeyCode.E) && Time.time - lastHintTime >= 3f)
+                if (kidTrigger != null && kidTrigger.playerInTriggerBool && Input.GetKeyDown(KeyCode.E))
                 {
                     AdvanceHint();
                 }
@@ -76,6 +108,7 @@ public class TutorialManager : MonoBehaviour
     {
         hintCount++;
         lastHintTime = Time.time;
+
         CloudClose();
         Invoke("OpenHint", 0.5f);
     }
@@ -84,7 +117,7 @@ public class TutorialManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (hintCount == 7) // проверка, чтобы не сработало повторно
+        if (hintCount == 7)
         {
             animator.Play("CloudDisappear");
         }

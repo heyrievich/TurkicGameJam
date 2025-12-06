@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class KidTrigger : MonoBehaviour
 {
-    public GameObject kidObject; // Объект, который будет исчезать
-    public string artefactName = "SunArtefact"; // Название нужного артефакта
+    public GameObject kidObject; // РћР±СЉРµРєС‚, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РёСЃС‡РµР·Р°С‚СЊ
+    public string artefactName = "SunArtefact"; // РќР°Р·РІР°РЅРёРµ РЅСѓР¶РЅРѕРіРѕ Р°СЂС‚РµС„Р°РєС‚Р°
     public Animator animator;
     private bool playerInside = false;
     public InventorySystem inventory;
@@ -16,6 +16,10 @@ public class KidTrigger : MonoBehaviour
     private AudioSource source;
 
     public ArtefactCounterUI artefactCounterUI;
+
+    // ------------------ РќРћР’РђРЇ РџР•Р Р•РњР•РќРќРђРЇ ------------------
+    public bool playerInTriggerBool = false; // Р”Р»СЏ TutorialManager
+    public NoteAnimationController noteAnimationController; // в†ђ РґРѕР±Р°РІР»РµРЅРѕ
 
     void Start()
     {
@@ -27,14 +31,16 @@ public class KidTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = true;
-
+            playerInTriggerBool = true; // в†ђ РѕР±РЅРѕРІР»СЏРµРј
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerInside = false;
+            playerInTriggerBool = false; // в†ђ РѕР±РЅРѕРІР»СЏРµРј
         }
     }
 
@@ -46,48 +52,46 @@ public class KidTrigger : MonoBehaviour
         }
     }
 
-
     void TryGiveArtefact()
     {
         if (inventory == null) return;
+
+        bool hasArtefact = false;
 
         for (int i = 0; i < inventory.items.Length; i++)
         {
             var item = inventory.items[i];
             if (item != null && item.itemName == artefactName)
             {
-                // Удаляем артефакт из инвентаря
+                hasArtefact = true;
+
+                // РЈРґР°Р»СЏРµРј Р°СЂС‚РµС„Р°РєС‚ РёР· РёРЅРІРµРЅС‚Р°СЂСЏ
                 inventory.items[i] = null;
                 inventory.slots[i].ClearSlot();
                 particle.SetActive(true);
 
-                // Устанавливаем анимацию радости
+                // РђРЅРёРјР°С†РёСЏ СЂР°РґРѕСЃС‚Рё
                 if (animator != null)
                 {
                     animator.SetBool("isHappy", true);
                 }
 
-                // Визуальный эффект — быстрое вращение и уменьшение
+                // Р’РёР·СѓР°Р»СЊРЅС‹Р№ СЌС„С„РµРєС‚ вЂ” РІСЂР°С‰РµРЅРёРµ + СѓРјРµРЅСЊС€РµРЅРёРµ
                 if (kidObject != null)
                 {
                     source.PlayOneShot(laugh);
                     Sequence sequence = DOTween.Sequence();
 
-                    // Вращение
                     sequence.Join(kidObject.transform.DORotate(new Vector3(0, 720, 0), 1.5f, RotateMode.FastBeyond360));
-
-                    // Уменьшение
                     sequence.Join(kidObject.transform.DOScale(Vector3.zero, 1.5f).SetEase(Ease.InBack));
 
-                    // Деактивировать объект после анимации
                     sequence.AppendCallback(() =>
                     {
-                       
                         kidObject.SetActive(false);
                     });
                 }
 
-                // Обновляем UI
+                // РћР±РЅРѕРІР»СЏРµРј UI
                 if (artefactCounterUI != null)
                     artefactCounterUI.UpdateArtefactCount();
 
@@ -95,12 +99,16 @@ public class KidTrigger : MonoBehaviour
                 break;
             }
         }
-    }
 
+        // Р•СЃР»Рё Р°СЂС‚РµС„Р°РєС‚Р° РЅРµС‚ вЂ” РїСЂРѕРёРіСЂС‹РІР°РµРј Р°РЅРёРјР°С†РёСЋ Note
+        if (!hasArtefact && noteAnimationController != null)
+        {
+            noteAnimationController.PlayNoteAnimation();
+        }
+    }
 
     public void KidSunArtefactGive()
     {
-        // Тут ты можешь реализовать, что происходит после передачи артефакта
-        Debug.Log("SunArtefact передан ребенку.");
+        Debug.Log("SunArtefact РїРµСЂРµРґР°РЅ СЂРµР±РµРЅРєСѓ.");
     }
 }

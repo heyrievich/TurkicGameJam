@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -6,6 +6,8 @@ public class ItemPickup : MonoBehaviour
     public GameObject takeObject;
 
     private bool playerInRange = false;
+    public bool playerInTriggerBool = false; // ← новая публичная переменная
+
     public AudioSource source;
     public AudioClip take;
 
@@ -13,7 +15,6 @@ public class ItemPickup : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
     }
-
 
     void Update()
     {
@@ -23,7 +24,7 @@ public class ItemPickup : MonoBehaviour
             if (added)
             {
                 source.PlayOneShot(take);
-                Destroy(takeObject); // ������� ����� �� ����
+                Destroy(takeObject);
             }
         }
     }
@@ -31,12 +32,18 @@ public class ItemPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = true;
+            playerInTriggerBool = true;   // ← обновляем
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = false;
+            playerInTriggerBool = false;  // ← обновляем
+        }
     }
 }

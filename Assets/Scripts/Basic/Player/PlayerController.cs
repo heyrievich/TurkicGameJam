@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float sprintMultiplier = 1.5f;
-    public LayerMask groundLayer;
 
     [Header("Stamina Settings")]
     public float maxStamina = 5f;
@@ -14,41 +13,43 @@ public class PlayerController : MonoBehaviour
     public float staminaDrainRate = 1.5f;
 
     [Header("Respawn Settings")]
-    public Transform spawnPoint; //  Новая переменная
-
-    private float currentStamina;
-    private Rigidbody rb;
-    private Vector3 targetPosition;
-    private bool isMoving = false;
-    private bool isSprinting = false;
-
-    private float sprintCooldownDuration = 1f;
-    private float sprintCooldownTimer = 0f;
-    private bool isTreeUpActive = false;
+    public Transform spawnPoint;
 
     [Header("Audio Settings")]
     public AudioSource audioSource;
     public AudioClip walkClip;
     public AudioClip runClip;
 
+    [Header("TreeUp Flag")]
+    public bool isTreeUp = false; // <-- новая публичная переменная
 
+    private float currentStamina;
+    private Rigidbody rb;
     private Animator animator;
+
+    private bool isSprinting = false;
+    private bool isTreeUpActive = false;
+
+    private float sprintCooldownDuration = 1f;
+    private float sprintCooldownTimer = 0f;
+
+    private Vector3 inputDirection;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        targetPosition = transform.position;
+
         currentStamina = maxStamina;
 
         if (spawnPoint == null)
-            spawnPoint = transform; // Если не задано — использовать текущую позицию как старт
+            spawnPoint = transform;
     }
 
     void Update()
     {
-        HandleMouseClick();
+        HandleMovementInput();
         HandleSprintInput();
         RegenerateStamina();
         UpdateAnimation();
@@ -56,39 +57,46 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isMoving)
-        {
-            MoveToTarget();
-        }
+        MovePlayer();
     }
 
-    void HandleMouseClick()
+    void HandleMovementInput()
     {
-        if (isTreeUpActive) return;
-        if (Input.GetMouseButtonDown(0))
+        if (isTreeUpActive)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
-            {
-                targetPosition = hit.point;
-                isMoving = true;
-            }
+            inputDirection = Vector3.zero;
+            return;
         }
+
+        float h = Input.GetAxisRaw("Horizontal"); // A / D
+        float v = Input.GetAxisRaw("Vertical");   // W / S
+
+        inputDirection = new Vector3(h, 0f, v).normalized;
+    }
+
+    void MovePlayer()
+    {
+        if (inputDirection == Vector3.zero) return;
+
+        float speed = moveSpeed * (isSprinting ? sprintMultiplier : 1f);
+        Vector3 move = inputDirection * speed * Time.fixedDeltaTime;
+
+        rb.MovePosition(rb.position + move);
+
+        Quaternion toRotation = Quaternion.LookRotation(inputDirection, Vector3.up);
+        rb.MoveRotation(Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.fixedDeltaTime));
     }
 
     void HandleSprintInput()
     {
         sprintCooldownTimer -= Time.deltaTime;
 
-        if (Input.GetMouseButton(1) && currentStamina > 0.1f && isMoving)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0.1f && inputDirection != Vector3.zero)
         {
             if (sprintCooldownTimer <= 0f)
-            {
                 isSprinting = true;
-            }
 
             currentStamina -= staminaDrainRate * Time.deltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         }
         else
         {
@@ -97,6 +105,8 @@ public class PlayerController : MonoBehaviour
 
             isSprinting = false;
         }
+
+        currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
     }
 
     void RegenerateStamina()
@@ -108,40 +118,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void MoveToTarget()
-    {
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        direction.y = 0f;
-
-        float speed = moveSpeed * (isSprinting ? sprintMultiplier : 1f);
-        Vector3 move = direction * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + move);
-
-        if (direction != Vector3.zero)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
-            rb.MoveRotation(Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.fixedDeltaTime));
-        }
-
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-        {
-            isMoving = false;
-        }
-    }
-
     void UpdateAnimation()
     {
         if (animator == null || isTreeUpActive) return;
 
+        bool isMoving = inputDirection != Vector3.zero;
 
         animator.SetBool("isIdle", !isMoving);
         animator.SetBool("isWalk", isMoving && !isSprinting);
         animator.SetBool("isRun", isMoving && isSprinting);
 
-        HandleFootstepSounds();
+        HandleFootstepSounds(isMoving);
     }
 
-    void HandleFootstepSounds()
+    void HandleFootstepSounds(bool isMoving)
     {
         if (!isMoving || isTreeUpActive)
         {
@@ -150,22 +140,19 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        AudioClip targetClip = isSprinting ? runClip : walkClip;
-
-        if (audioSource.clip != targetClip)
+        AudioClip clip = isSprinting ? runClip : walkClip;
+        if (audioSource.clip != clip)
         {
-            audioSource.clip = targetClip;
+            audioSource.clip = clip;
             audioSource.loop = true;
             audioSource.Play();
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Lava"))
         {
-            Debug.Log("Касание с лавой");
             TeleportToSpawn();
         }
     }
@@ -173,17 +160,13 @@ public class PlayerController : MonoBehaviour
     void TeleportToSpawn()
     {
         transform.position = spawnPoint.position;
-        rb.velocity = Vector3.zero; // сброс скорости
-        isMoving = false;
-        targetPosition = spawnPoint.position;
+        rb.velocity = Vector3.zero;
+        inputDirection = Vector3.zero;
     }
 
-    public float GetStamina()
-    {
-        return currentStamina;
-    }
+    public float GetStamina() => currentStamina;
 
-
+    // ------------ TREE UP ------------
     public void TreeUp()
     {
         StartCoroutine(TreeUpRoutine());
@@ -192,11 +175,10 @@ public class PlayerController : MonoBehaviour
     private IEnumerator TreeUpRoutine()
     {
         isTreeUpActive = true;
-        // Блокируем движение
-        bool prevIsMoving = isMoving;
-        isMoving = false;
+        isTreeUp = true; // <-- начало TreeUp
 
-        // Отключаем текущие анимации
+        inputDirection = Vector3.zero;
+
         if (animator != null)
         {
             animator.SetBool("isIdle", false);
@@ -207,14 +189,12 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(1.7f);
 
-        // Возвращаем флаги в норму
         if (animator != null)
-        {
             animator.SetBool("isTreeUp", false);
-        }
 
-        // Возвращаем возможность двигаться, если была включена
-        isMoving = prevIsMoving;
         isTreeUpActive = false;
+        isTreeUp = false; // <-- окончание TreeUp
+
+        transform.position += new Vector3(0, 0.05f, 0);
     }
 }
