@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2466519714882333073}
   - component: {fileID: 6644895252532225538}
   m_Layer: 0
-  m_Name: dumpster
+  m_Name: Dumpster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

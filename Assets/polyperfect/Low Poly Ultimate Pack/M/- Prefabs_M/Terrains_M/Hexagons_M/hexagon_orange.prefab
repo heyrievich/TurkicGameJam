@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8839737491494247678}
   - component: {fileID: 6450825038329475477}
   m_Layer: 0
-  m_Name: hexagon_orange
+  m_Name: Hexagon_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2502210576585668050}
   - component: {fileID: 4897062008743566018}
   m_Layer: 0
-  m_Name: covid
+  m_Name: Covid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

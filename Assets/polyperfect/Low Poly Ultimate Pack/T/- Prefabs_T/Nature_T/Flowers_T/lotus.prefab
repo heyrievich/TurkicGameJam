@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33029998873357604}
   - component: {fileID: 23704034428740412}
   m_Layer: 0
-  m_Name: lotus
+  m_Name: Lotus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

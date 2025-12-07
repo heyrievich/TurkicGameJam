@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95000012182773196}
   - component: {fileID: 64000014286635822}
   m_Layer: 0
-  m_Name: guidepost
+  m_Name: Guidepost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

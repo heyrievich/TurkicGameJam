@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8802646792754941529}
   - component: {fileID: 589442022027003914}
   m_Layer: 0
-  m_Name: thermos
+  m_Name: Thermos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

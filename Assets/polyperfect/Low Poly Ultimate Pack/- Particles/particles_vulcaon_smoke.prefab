@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 240305911318631398}
   - component: {fileID: 240305911318631399}
   m_Layer: 0
-  m_Name: particles_vulcaon_smoke
+  m_Name: Particles_Vulcaon_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

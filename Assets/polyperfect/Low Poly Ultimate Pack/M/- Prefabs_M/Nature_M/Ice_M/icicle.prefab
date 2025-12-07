@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2330036}
   - component: {fileID: 6498178}
   m_Layer: 0
-  m_Name: icicle
+  m_Name: Icicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

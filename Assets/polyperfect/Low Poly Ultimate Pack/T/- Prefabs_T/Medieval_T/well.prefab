@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000011842648046}
   - component: {fileID: 64000011188322446}
   m_Layer: 0
-  m_Name: well
+  m_Name: Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

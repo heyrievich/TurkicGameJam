@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000013493910534}
   - component: {fileID: 23000014008830976}
   m_Layer: 0
-  m_Name: gibbet
+  m_Name: Gibbet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

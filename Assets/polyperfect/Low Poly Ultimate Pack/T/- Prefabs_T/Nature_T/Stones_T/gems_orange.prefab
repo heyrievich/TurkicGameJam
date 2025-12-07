@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000011774555536}
   - component: {fileID: 64000014249770752}
   m_Layer: 0
-  m_Name: gems_orange
+  m_Name: Gems_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

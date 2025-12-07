@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000012018127104}
   - component: {fileID: 135000010901364920}
   m_Layer: 0
-  m_Name: shrub_tropic
+  m_Name: Shrub_Tropic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

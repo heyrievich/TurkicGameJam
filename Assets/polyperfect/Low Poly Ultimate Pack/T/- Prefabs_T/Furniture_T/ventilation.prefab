@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23305898870979138}
   - component: {fileID: 65103415343486454}
   m_Layer: 0
-  m_Name: ventilation
+  m_Name: Ventilation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

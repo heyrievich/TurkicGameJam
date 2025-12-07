@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6022601552320118481}
   - component: {fileID: 9048297880616418962}
   m_Layer: 0
-  m_Name: aluminium
+  m_Name: Aluminium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1245826832185194108}
   - component: {fileID: 3459597091142927495}
   m_Layer: 0
-  m_Name: dam
+  m_Name: Dam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

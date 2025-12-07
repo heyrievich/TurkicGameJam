@@ -309,9 +309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0411\u043E\u0433\u0438\u043D\u044F \u041C\u0430\u0442\u0435\u0440\u0438,
-    \u0425\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0438\u0446\u0430
-    \u0434\u0443\u0448 \u0438 \u0436\u0438\u0437\u043D\u0438."
+  m_text: Goddess of Mothers, Keeper of Souls and Life.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -445,8 +443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0422\u0435\u043F\u0435\u0440\u044C \u043E\u043D\u0430 \u0434\u043E\u043B\u0436\u043D\u0430
-    \u043D\u0430\u0439\u0442\u0438 \u0438\u0445."
+  m_text: "Now she must find them again \u2014"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -655,8 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0441\u043F\u043E\u043C\u0438\u043D\u0430\u044F, \u0447\u0443\u0432\u0441\u0442\u0432\u0443\u044F,
-    \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u044F \u0443\u0442\u0440\u0430\u0447\u0435\u043D\u043D\u043E\u0435."
+  m_text: Remembering, sensing, and reclaiming what was lost.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -1090,8 +1086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u043D\u0430 \u043E\u0431\u0435\u0440\u0435\u0433\u0430\u043B\u0430
-    \u0434\u0435\u0442\u0435\u0439 \u043C\u0438\u0440\u0430"
+  m_text: She watched over the children of the world,
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -1467,7 +1462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0415\u0451 \u0437\u043E\u0432\u0443\u0442 \u0423\u043C\u0430\u0439."
+  m_text: Her name is Umai.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -1721,7 +1716,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0c5eb60776176004997fe999e0f3c94c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7661ed3bc4459ed488ae58d4270a2e8f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1879,8 +1874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0438 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0438\u0437 \u043D\u0438\u0445
-    \u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0430 \u0441\u0435\u0440\u0434\u0446\u0435\u043C."
+  m_text: Feeling each of them with her heart.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -2014,7 +2008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u0432\u044F\u0437\u044C \u043E\u0431\u043E\u0440\u0432\u0430\u043B\u0430\u0441\u044C."
+  m_text: The connection shattered.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -2556,8 +2550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u043E \u043E\u0434\u043D\u0430\u0436\u0434\u044B... \u0447\u0442\u043E-\u0442\u043E
-    \u0438\u0437\u043C\u0435\u043D\u0438\u043B\u043E\u0441\u044C."
+  m_text: "But one day\u2026 something changed."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}

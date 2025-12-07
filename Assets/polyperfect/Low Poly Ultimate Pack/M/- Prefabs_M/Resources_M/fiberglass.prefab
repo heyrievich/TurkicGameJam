@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 336139436427382292}
   - component: {fileID: 336139436429547121}
   m_Layer: 0
-  m_Name: fiberglass
+  m_Name: Fiberglass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

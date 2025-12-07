@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6488374910673761523}
   - component: {fileID: 7038975805061564102}
   m_Layer: 0
-  m_Name: pumpjack
+  m_Name: Pumpjack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

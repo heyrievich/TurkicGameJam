@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23958074183723294}
   - component: {fileID: 65408783543569994}
   m_Layer: 0
-  m_Name: generator
+  m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

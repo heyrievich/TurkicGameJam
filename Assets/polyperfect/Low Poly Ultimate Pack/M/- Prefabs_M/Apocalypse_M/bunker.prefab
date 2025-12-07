@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4742476375580202872}
   m_Layer: 0
-  m_Name: bunker
+  m_Name: Bunker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

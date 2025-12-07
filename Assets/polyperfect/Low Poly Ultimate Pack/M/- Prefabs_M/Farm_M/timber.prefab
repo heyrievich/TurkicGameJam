@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23963730660374084}
   - component: {fileID: 65209330740571180}
   m_Layer: 0
-  m_Name: timber
+  m_Name: Timber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

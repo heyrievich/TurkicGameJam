@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23310541809464250}
   - component: {fileID: 65413552173999730}
   m_Layer: 0
-  m_Name: cooker
+  m_Name: Cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

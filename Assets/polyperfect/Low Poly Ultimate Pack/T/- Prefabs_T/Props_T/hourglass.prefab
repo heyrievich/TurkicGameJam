@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1946281214108290243}
   - component: {fileID: 6429032469661701147}
   m_Layer: 0
-  m_Name: hourglass
+  m_Name: Hourglass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

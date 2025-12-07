@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23549655737053786}
   - component: {fileID: 64423449614072272}
   m_Layer: 0
-  m_Name: toilet
+  m_Name: Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

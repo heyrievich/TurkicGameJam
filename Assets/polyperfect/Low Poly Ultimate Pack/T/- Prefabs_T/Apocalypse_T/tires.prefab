@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23227844489189628}
   - component: {fileID: 64640010719060156}
   m_Layer: 0
-  m_Name: tires
+  m_Name: Tires
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

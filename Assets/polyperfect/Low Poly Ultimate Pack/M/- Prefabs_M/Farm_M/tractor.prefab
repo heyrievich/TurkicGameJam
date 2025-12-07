@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4743926529891218}
   m_Layer: 0
-  m_Name: tractor
+  m_Name: Tractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

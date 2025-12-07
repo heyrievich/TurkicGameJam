@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23126895322114764}
   - component: {fileID: 65542457827234574}
   m_Layer: 0
-  m_Name: drugs
+  m_Name: Drugs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23477113518263790}
   - component: {fileID: 65889613362742920}
   m_Layer: 0
-  m_Name: stretcher
+  m_Name: Stretcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

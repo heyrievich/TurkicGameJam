@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000012252026914}
   - component: {fileID: 23000012645434192}
   m_Layer: 0
-  m_Name: fireplace
+  m_Name: Fireplace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

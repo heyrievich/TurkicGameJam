@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5661426857941608970}
   - component: {fileID: 6042644154709918385}
   m_Layer: 0
-  m_Name: hexagon_brown
+  m_Name: Hexagon_Brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

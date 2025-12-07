@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33332734527684954}
   - component: {fileID: 23453797694997668}
   m_Layer: 0
-  m_Name: chandelier
+  m_Name: Chandelier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

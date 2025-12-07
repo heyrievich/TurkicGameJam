@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23655295464520984}
   - component: {fileID: 64039750644238210}
   m_Layer: 0
-  m_Name: goblet
+  m_Name: Goblet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

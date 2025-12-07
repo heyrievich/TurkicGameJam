@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 689324688137954723}
   - component: {fileID: 2184646621361092896}
   m_Layer: 0
-  m_Name: toothbrush
+  m_Name: Toothbrush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

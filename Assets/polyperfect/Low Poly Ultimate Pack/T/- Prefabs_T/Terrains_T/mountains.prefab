@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000012511536484}
   - component: {fileID: 64000011672619940}
   m_Layer: 0
-  m_Name: mountains
+  m_Name: Mountains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

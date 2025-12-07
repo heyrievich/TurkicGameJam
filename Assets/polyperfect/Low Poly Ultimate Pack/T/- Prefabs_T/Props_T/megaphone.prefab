@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1671716914673798399}
   - component: {fileID: 5459637366068859801}
   m_Layer: 0
-  m_Name: megaphone
+  m_Name: Megaphone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000013321263422}
   - component: {fileID: 23000011115561032}
   m_Layer: 0
-  m_Name: grass_orange
+  m_Name: Grass_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

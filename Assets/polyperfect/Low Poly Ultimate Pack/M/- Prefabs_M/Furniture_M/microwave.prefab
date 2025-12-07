@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23689190717197330}
   - component: {fileID: 65805310767114850}
   m_Layer: 0
-  m_Name: microwave
+  m_Name: Microwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

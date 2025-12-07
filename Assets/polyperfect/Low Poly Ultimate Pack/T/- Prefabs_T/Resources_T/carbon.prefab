@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3217958888990792430}
   - component: {fileID: 1537045781772171820}
   m_Layer: 0
-  m_Name: carbon
+  m_Name: Carbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

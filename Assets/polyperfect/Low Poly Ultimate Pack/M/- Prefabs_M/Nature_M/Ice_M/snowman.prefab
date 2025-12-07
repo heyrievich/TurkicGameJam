@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2340936}
   - component: {fileID: 64155278998108052}
   m_Layer: 0
-  m_Name: snowman
+  m_Name: Snowman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

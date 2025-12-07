@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000013485168180}
   - component: {fileID: 135000010319525794}
   m_Layer: 0
-  m_Name: pumkin
+  m_Name: Pumkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -19,9 +19,9 @@ public class MenuManager : MonoBehaviour
     // Метод для перехода на другую сцену
     public void LoadScene(string sceneNamee)
     {
-        anim.Play("MainMenuClose");
+        anim.Play("PeregodDisappear");
         sceneName = sceneNamee;
-        Invoke("StartScene", 0.6f);
+        Invoke("StartScene", 1.5f);
     }
 
     public void StartScene()

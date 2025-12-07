@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000013233714454}
   - component: {fileID: 64553007744532294}
   m_Layer: 0
-  m_Name: ballista
+  m_Name: Ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

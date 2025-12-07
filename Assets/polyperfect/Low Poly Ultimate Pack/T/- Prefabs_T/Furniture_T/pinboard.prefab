@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 821205917116253862}
   - component: {fileID: 2442923995063501213}
   m_Layer: 0
-  m_Name: pinboard
+  m_Name: Pinboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

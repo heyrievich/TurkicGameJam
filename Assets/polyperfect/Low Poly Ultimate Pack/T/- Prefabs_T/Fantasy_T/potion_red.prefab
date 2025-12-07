@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23363735102876182}
   - component: {fileID: 64166265676318090}
   m_Layer: 0
-  m_Name: potion_red
+  m_Name: Potion_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000011281934116}
   - component: {fileID: 135000012712385180}
   m_Layer: 0
-  m_Name: shrub_white
+  m_Name: Shrub_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 576389873097363456}
   - component: {fileID: 1170419308555881607}
   m_Layer: 0
-  m_Name: treadmill
+  m_Name: Treadmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

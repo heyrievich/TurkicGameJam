@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5515796760020816922}
   - component: {fileID: 6371334405177372709}
   m_Layer: 0
-  m_Name: power_line_pole
+  m_Name: Power_Line_Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

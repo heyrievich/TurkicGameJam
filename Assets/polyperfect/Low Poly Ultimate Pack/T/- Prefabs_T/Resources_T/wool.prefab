@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3333491272152062632}
   - component: {fileID: 9008056039326457037}
   m_Layer: 0
-  m_Name: wool
+  m_Name: Wool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

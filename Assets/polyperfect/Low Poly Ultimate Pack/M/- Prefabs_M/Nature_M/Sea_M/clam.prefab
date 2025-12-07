@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7413931137954332334}
   - component: {fileID: 8152085658682991151}
   m_Layer: 0
-  m_Name: clam
+  m_Name: Clam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

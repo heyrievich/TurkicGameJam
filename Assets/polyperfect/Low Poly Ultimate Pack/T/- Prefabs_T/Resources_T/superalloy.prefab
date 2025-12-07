@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 494391654481922843}
   - component: {fileID: 494391654484218742}
   m_Layer: 0
-  m_Name: superalloy
+  m_Name: Superalloy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

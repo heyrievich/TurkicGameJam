@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23865725401307176}
   - component: {fileID: 64103159860571184}
   m_Layer: 0
-  m_Name: carpet
+  m_Name: Carpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

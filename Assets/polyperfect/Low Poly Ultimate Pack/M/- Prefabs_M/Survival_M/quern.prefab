@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23937151151111760}
   - component: {fileID: 65049987017287592}
   m_Layer: 0
-  m_Name: quern
+  m_Name: Quern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

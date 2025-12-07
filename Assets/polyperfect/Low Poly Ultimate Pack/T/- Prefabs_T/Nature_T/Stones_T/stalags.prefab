@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000013190477478}
   - component: {fileID: 64000012317974566}
   m_Layer: 0
-  m_Name: stalags
+  m_Name: Stalags
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

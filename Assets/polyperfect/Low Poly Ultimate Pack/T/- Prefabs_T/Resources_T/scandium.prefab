@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7599892529158476277}
   - component: {fileID: 5246958746566391279}
   m_Layer: 0
-  m_Name: scandium
+  m_Name: Scandium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

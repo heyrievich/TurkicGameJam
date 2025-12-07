@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2387712}
   - component: {fileID: 6430570}
   m_Layer: 0
-  m_Name: guidepost
+  m_Name: Guidepost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

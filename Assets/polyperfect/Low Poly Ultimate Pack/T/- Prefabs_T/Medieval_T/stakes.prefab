@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23000012324060804}
   - component: {fileID: 65000012010310958}
   m_Layer: 0
-  m_Name: stakes
+  m_Name: Stakes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

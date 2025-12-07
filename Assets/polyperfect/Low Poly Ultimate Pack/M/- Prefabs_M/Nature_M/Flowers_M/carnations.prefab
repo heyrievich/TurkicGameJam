@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3365394}
   - component: {fileID: 2372606}
   m_Layer: 0
-  m_Name: carnations
+  m_Name: Carnations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

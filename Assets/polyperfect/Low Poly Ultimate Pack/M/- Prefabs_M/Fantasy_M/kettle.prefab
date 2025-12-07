@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23471672197217740}
   - component: {fileID: 64276620969811296}
   m_Layer: 0
-  m_Name: kettle
+  m_Name: Kettle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

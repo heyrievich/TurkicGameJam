@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23450314400135392}
   - component: {fileID: 65913970861977674}
   m_Layer: 0
-  m_Name: oven
+  m_Name: Oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

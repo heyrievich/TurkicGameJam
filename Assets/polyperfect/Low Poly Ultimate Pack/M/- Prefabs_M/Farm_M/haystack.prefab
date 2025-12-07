@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23580827123899264}
   - component: {fileID: 65981077082565594}
   m_Layer: 0
-  m_Name: haystack
+  m_Name: Haystack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

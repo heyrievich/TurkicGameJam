@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8267782390303655304}
   - component: {fileID: 4860920577172452956}
   m_Layer: 0
-  m_Name: mosque
+  m_Name: Mosque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,12 +11,14 @@ public class TutorialManager : MonoBehaviour
     public PlayerController player;
 
     private float lastHintTime;
-    private int movementKeyCount; // ← заменили счетчик нажатий мыши
+    private int movementKeyCount;
 
-    public ItemPickup pickup; // ← добавить в классе TutorialManager
-
+    public ItemPickup pickup;
     public KidTrigger kidTrigger;
 
+    [Header("Sound")]
+    public AudioSource audioSource;      // ← ДОБАВЛЕН
+    public AudioClip hintSound;          // ← ДОБАВЛЕН
 
     void Start()
     {
@@ -31,6 +33,9 @@ public class TutorialManager : MonoBehaviour
         }
 
         animator.Play("CloudAppear");
+
+        // Проиграть звук для самой первой подсказки
+        PlayHintSound();
     }
 
     void Update()
@@ -38,7 +43,6 @@ public class TutorialManager : MonoBehaviour
         switch (hintCount)
         {
             case 0:
-                // Нажатия клавиш WASD
                 if (Input.GetKeyDown(KeyCode.W) ||
                     Input.GetKeyDown(KeyCode.A) ||
                     Input.GetKeyDown(KeyCode.S) ||
@@ -54,7 +58,6 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 1:
-                // Нажатие Shift вместо ПКМ
                 if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
                 {
                     AdvanceHint();
@@ -62,7 +65,6 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 2:
-                // Проверка TreeUp
                 if (player != null && player.isTreeUp)
                 {
                     AdvanceHint();
@@ -77,7 +79,6 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 4:
-                // Проверка TreeUp
                 if (player != null && player.isTreeUp)
                 {
                     AdvanceHint();
@@ -141,5 +142,15 @@ public class TutorialManager : MonoBehaviour
         }
 
         animator.Play("CloudAppear");
+
+        PlayHintSound();   // ← проигрываем звук при появлении подсказки
+    }
+
+    private void PlayHintSound()
+    {
+        if (audioSource != null && hintSound != null)
+        {
+            audioSource.PlayOneShot(hintSound);
+        }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9136534734098613668}
   - component: {fileID: 7569117550644418853}
   m_Layer: 0
-  m_Name: hanger
+  m_Name: Hanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
