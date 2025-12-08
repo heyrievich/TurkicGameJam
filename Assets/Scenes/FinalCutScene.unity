@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dab26ed7eadfc94ba845e6be37fbaf0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ac5fa9649828b349aa9fcefa76d8afd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1102,7 +1102,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 65e1a98438a562943a26f5c27aedd301, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 485e297a5af2bb64e9b7cc1d53ba54c2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u043E\u043D\u0435\u0446"
+  m_text: The End
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
   m_sharedMaterial: {fileID: 6869527983592741347, guid: 09bfc344214a7e840973837b0ec00905, type: 2}
