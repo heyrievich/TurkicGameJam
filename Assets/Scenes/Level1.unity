@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0108096935, g: 0.028944448, b: 0.0436268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1871,6 +1870,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -5583,6 +5583,10 @@ PrefabInstance:
       value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 1319121797324089828, guid: cf29c53903e4c0445ae3a4f25165cfca, type: 3}
+      propertyPath: isY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319121797324089828, guid: cf29c53903e4c0445ae3a4f25165cfca, type: 3}
       propertyPath: delay
       value: 1.8
       objectReference: {fileID: 0}
@@ -9205,6 +9209,14 @@ PrefabInstance:
       value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 1319121797324089828, guid: cf29c53903e4c0445ae3a4f25165cfca, type: 3}
+      propertyPath: isX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319121797324089828, guid: cf29c53903e4c0445ae3a4f25165cfca, type: 3}
+      propertyPath: isY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319121797324089828, guid: cf29c53903e4c0445ae3a4f25165cfca, type: 3}
       propertyPath: delay
       value: 1.8
       objectReference: {fileID: 0}
@@ -11057,6 +11069,10 @@ PrefabInstance:
     - target: {fileID: 8204841485153314190, guid: d3ad9cd052ca0ed41925e1dd5021a836, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418542287993289647, guid: d3ad9cd052ca0ed41925e1dd5021a836, type: 3}
+      propertyPath: isY
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8418542287993289647, guid: d3ad9cd052ca0ed41925e1dd5021a836, type: 3}
       propertyPath: log
