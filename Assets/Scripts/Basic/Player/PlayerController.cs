@@ -87,6 +87,19 @@ public class PlayerController : MonoBehaviour
         rb.MoveRotation(Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.fixedDeltaTime));
     }
 
+    public void SetNewSpawnPoint(Vector3 newPosition)
+    {
+        if (spawnPoint == null)
+        {
+            GameObject sp = new GameObject("DynamicSpawnPoint");
+            spawnPoint = sp.transform;
+        }
+
+        spawnPoint.position = newPosition;
+        Debug.Log("Новый чекпоинт установлен: " + newPosition);
+    }
+
+
     void HandleSprintInput()
     {
         sprintCooldownTimer -= Time.deltaTime;
